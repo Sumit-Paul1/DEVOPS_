@@ -1,4 +1,4 @@
-# Day 02 – Linux Architecture, Processes, and systemd
+I# Day 02 – Linux Architecture, Processes, and systemd
 
 ## Task
 Today’s goal is to **understand how Linux works under the hood**.

@@ -1,0 +1,130 @@
+Day 02 – Linux Architecture, Processes, and systemd
+ Core Components of Linux
+ Kernel
+
+The heart of Linux
+
+Manages:
+
+CPU
+
+Memory
+
+Devices
+
+File systems
+
+Acts as bridge between hardware and software
+User Space
+
+Where users and applications run
+
+Examples:
+
+Bash shell
+
+Docker
+
+Nginx
+
+Cannot directly access hardware (must go through kernel)
+
+Init / systemd
+
+First process started by kernel
+
+Has PID 1
+
+Responsible for:
+
+Starting services
+
+Managing background processes
+
+Handling system boot
+
+Modern Linux uses systemd as init system.
+
+2️⃣ How Processes Are Created
+
+Every process has:
+
+PID (Process ID)
+
+PPID (Parent Process ID)
+
+Process Creation Flow:
+
+Parent process uses fork()
+
+Child process created
+
+exec() loads program into memory
+
+Example:
+
+bash → runs → ls
+
+Here:
+
+bash = parent
+
+ls = child
+
+3️⃣ Process States
+State	Meaning
+Running (R)	Currently using CPU
+Sleeping (S)	Waiting for event/input
+Stopped (T)	Paused process
+Zombie (Z)	Finished but not cleaned by parent
+Uninterruptible (D)	Waiting for I/O
+
+Check using:
+
+ps aux
+top
+4️⃣ What systemd Does
+
+systemd:
+
+Manages system services
+
+Handles boot process
+
+Restarts failed services
+
+Manages logs (journald)
+
+Common commands:
+
+systemctl start nginx
+systemctl stop nginx
+systemctl restart nginx
+systemctl status nginx
+systemctl enable nginx
+
+Why it matters:
+
+Ensures services run automatically
+
+Critical for production servers
+
+Used in DevOps troubleshooting daily
+
+5️⃣ 5 Daily Linux Commands
+ls        # list files
+cd        # change directory
+ps aux    # check processes
+top       # monitor system
+systemctl # manage services
+Summary
+
+Kernel manages hardware.
+
+User space runs applications.
+
+systemd manages services and boot.
+
+Processes are created using fork + exec.
+
+Understanding this helps in debugging servers.
