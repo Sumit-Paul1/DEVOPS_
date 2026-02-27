@@ -3,7 +3,6 @@ Day 02 – Linux Architecture, Processes, and systemd
  Kernel
 
 The heart of Linux
-
 Manages:
 
 CPU
@@ -19,13 +18,7 @@ User Space
 
 Where users and applications run
 
-Examples:
-
-Bash shell
-
-Docker
-
-Nginx
+Examples:Bash shellDockerNginx
 
 Cannot directly access hardware (must go through kernel)
 
@@ -45,7 +38,7 @@ Handling system boot
 
 Modern Linux uses systemd as init system.
 
-2️⃣ How Processes Are Created
+How Processes Are Created
 
 Every process has:
 
@@ -71,7 +64,7 @@ bash = parent
 
 ls = child
 
-3️⃣ Process States
+ Process States
 State	Meaning
 Running (R)	Currently using CPU
 Sleeping (S)	Waiting for event/input
@@ -83,18 +76,9 @@ Check using:
 
 ps aux
 top
-4️⃣ What systemd Does
+What systemd Does
 
-systemd:
-
-Manages system services
-
-Handles boot process
-
-Restarts failed services
-
-Manages logs (journald)
-
+systemd: Manages system services , Handles boot process , Restarts failed services ,Manages logs (journald)
 Common commands:
 
 systemctl start nginx
@@ -111,7 +95,7 @@ Critical for production servers
 
 Used in DevOps troubleshooting daily
 
-5️⃣ 5 Daily Linux Commands
+ Daily Linux Commands
 ls        # list files
 cd        # change directory
 ps aux    # check processes
